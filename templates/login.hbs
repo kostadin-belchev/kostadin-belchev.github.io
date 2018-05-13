@@ -1,12 +1,14 @@
-{{> navigation}}
+{{> header}}
 <section id="viewLogin">
-    <h2>Login to your account:</h2>
-    <form id="formLogin">
-        <label>Username:</label>
-        <input type="text" name="username" placeholder="Enter your Email">
-        <label>Password:</label>
-        <input type="password" name="pass" placeholder="Enter your Password">
-        <input type="submit" class="login" value="Login" onclick="loginUser(event)">
-    </form>
+    <div class="content">
+        <form id="formLogin" class="form">
+            <label>Username</label>
+            <input name="username" type="text">
+            <label>Password</label>
+            <input name="password" type="password">
+            <input id="btnLogin" value="Sign In" type="submit" onclick="loginUser(event)">
+            <a href="#" onclick="loadHome()">Register</a>
+        </form>
+    </div>
 </section>
 {{> footer}}
