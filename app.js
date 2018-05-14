@@ -1,6 +1,6 @@
 function startApp() {
     // at startup go to home view
-    loadHome();
+    loadWelcome();
 
     // To make it prettier
     // Bind the info / error boxes: hide on click
