@@ -68,21 +68,24 @@ function registerUser(event) {
 
 function logoutUser() {
     //The “logout” REST service at the back-end should be obligatory called at logout.
-    $.ajax({
-        method: 'POST',
-        url: BASE_URL + 'user/' + APP_KEY + '/_logout',
-        headers: {
-            'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
-        },
-        success: logoutUserSuccess,
-        error: handleAjaxError
-    });
+    // $.ajax({
+    //     method: 'POST',
+    //     url: BASE_URL + 'user/' + APP_KEY + '/_logout',
+    //     headers: {
+    //         'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
+    //     },
+    //     success: logoutUserSuccess,
+    //     error: handleAjaxError
+    // });
 
-    function logoutUserSuccess() {
-        sessionStorage.clear();
-        showInfo('Logout successful.');
-        loadHome();
-    }
+    // function logoutUserSuccess() {
+    //     sessionStorage.clear();
+    //     showInfo('Logout successful.');
+    //     loadHome();
+    // }
+    sessionStorage.clear();
+    showInfo('Logout successful.');
+    loadHome();
 }
 
 function loginUser(event) {
