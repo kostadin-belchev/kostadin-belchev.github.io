@@ -1,0 +1,24 @@
+<hr>
+<div class="row">
+  <div *ngFor="let product of products$ | async" class="col-xs-12">
+      <a style="cursor: pointer;" routerLink="../details/{{product.ownerId}}/{{product.id}}" class="list-group-item clearfix">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{product.name}}</h4>
+        <h2 class="btn btn-outline-secondary">{{product.price}} $</h2>
+        <h6 class="text-dark">submitted {{calcTime(product.createdOn)}} ago</h6>
+        <p class="list-group-item-text text-md-left text-black-50">{{product.description}}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          src="{{product.imagePath}}"
+          alt="{{product.name}}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>      
+  </div>
+</div>
+
+<ng-template #loading>
+    Loading stuff...
+</ng-template>
